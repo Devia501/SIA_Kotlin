@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ugn_green"
+    tools:context="com.example.ugnapp.LoginActivity">
+
+    <!-- Logo Background (final: kecil & pudar) -->
+    <ImageView
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:src="@drawable/logougn"
+        android:alpha="0.10"
+        android:layout_marginBottom="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Header (final: gradasi + garis bawah) -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@drawable/header_auth_rounded"
+        android:paddingHorizontal="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/headerLogo"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/logougn"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UNIVERSITAS GLOBAL NUSANTARA"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:layout_toEndOf="@id/headerLogo"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp" />
+    </RelativeLayout>
+
+    <!-- Form Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingHorizontal="40dp"
+        android:paddingTop="30dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="30dp" />
+
+        <!-- Email -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            style="@style/AuthLabel.Login"
+            android:layout_marginStart="8dp"/>
+        />
+        <EditText
+            android:id="@+id/etEmail"
+            android:hint="nama@email.com"
+            android:inputType="textEmailAddress"
+            style="@style/AuthInput.Beige" />
+
+        <!-- Password (Pakai ikon mata) -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            style="@style/AuthLabel.Login"
+            android:layout_marginStart="8dp"/>
+        />
+
+        <!-- Ini adalah wrapper untuk ikon mata -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleDrawable="@drawable/ic_eye_hidden"
+            app:passwordToggleTint="@color/ugn_input_placeholder"
+            android:layout_marginBottom="18dp">
+
+            <!-- Perhatikan: pakai TextInputEditText, bukan EditText biasa -->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:hint="Masukkan password"
+                android:inputType="textPassword"
+                style="@style/AuthInput.Beige.Password" />
+            <!-- Pakai style khusus password -->
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Captcha -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Captcha"
+            style="@style/AuthLabel.Login"
+            android:layout_marginStart="8dp"/>
+        />
+
+        <!-- Kotak Captcha -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@drawable/captcha_bg"
+            android:paddingHorizontal="18dp"
+            android:paddingVertical="10dp">
+
+            <CheckBox
+                android:id="@+id/captchaCheckbox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="I'm not a robot"
+                android:textColor="@color/black"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/captcha" />
+        </LinearLayout>
+
+        <!-- Spacer (mendorong tombol ke bawah) -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- Tombol Login (pakai ulang style tombol register) -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/loginButton"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_register"
+            android:text="Login"
+            android:textColor="@color/ugn_beige_text"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:paddingVertical="10dp"
+            android:layout_marginBottom="40dp"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
