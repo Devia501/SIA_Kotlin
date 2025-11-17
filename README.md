@@ -12,6 +12,7 @@ Ini bagian kalian yakk:
 | `branch-auth`      | Gurveen   | Modul autentikasi         |
 | `branch-pendaftar` | Devia     | Modul pendaftar mahasiswa |
 | `branch-admin`     | Siti      | Modul admin               |
+| `main`             | Nindya    | Database                  |
 
 ---
 
